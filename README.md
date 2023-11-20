@@ -1,2 +1,3 @@
-# Codewars
-Repositorio donde agrego como soluciono los retos de codewars que me va dando la plataforma
+# Ejercicios de Python
+Repositorio donde agrego como soluciono retos de paginas como codewars y exercism
+
