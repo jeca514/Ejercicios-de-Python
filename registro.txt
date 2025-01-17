@@ -1,0 +1,4 @@
+Ejecutando 'agregar_libro' con args: ('1984', 'George Orwell') y kwargs: {}
+Ejecutando 'agregar_libro' con args: ('Cien años de soledad', 'Gabriel García Márquez') y kwargs: {}
+Ejecutando 'eliminar_libro' con args: ('1984',) y kwargs: {}
+Ejecutando 'eliminar_libro' con args: ('El Quijote',) y kwargs: {}
