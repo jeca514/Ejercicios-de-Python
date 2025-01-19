@@ -1,5 +1,5 @@
 from banco.clientes import Cuenta
-
+from banco.funcionarios import Trabajadores
 
 # Crear cuentas
 cuenta1 = Cuenta("Jose Antonio Perez Chacon", 100000.0, "COP$")
@@ -31,3 +31,16 @@ resultado, mensaje = cuenta1.transaccion(15000, cuenta2)
 print(mensaje)
 cuenta1.mostrar_detalles_cuenta()
 cuenta2.mostrar_detalles_cuenta()
+
+cuenta3 = Cuenta("andrea Fernanda Lopez", "mil pesos", "COP$")
+cuenta3.mostrar_detalles_cuenta()
+
+
+print("\n============== Empleados ==============")
+
+empleado = Trabajadores("Tomas Lucas Pachon", 1500000, 3)
+empleado.mostrar_detalles_empleado()
+
+empleado.rendimiento = 5
+
+empleado.mostrar_detalles_empleado()

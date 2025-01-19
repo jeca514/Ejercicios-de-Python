@@ -1,8 +1,12 @@
 class Cuenta:
     def __init__(self, titular, saldo, divisa):
         self._titular = titular
-        self._saldo = saldo
         self._divisa = divisa
+        if isinstance(saldo, float):
+            self._saldo = saldo
+        else:
+            print("saldo no valido se establecera en 0")
+            self._saldo = 0
 
     @property
     def titular(self):
