@@ -18,7 +18,7 @@ class Cuenta:
 
     @saldo.setter
     def saldo(self, saldo_nuevo):
-        if isinstance(saldo_nuevo, float) and saldo_nuevo > 0:
+        if isinstance(saldo_nuevo, (float, int)) and saldo_nuevo > 0:
             self._saldo = saldo_nuevo
         else:
             raise ValueError("Saldo inválido: debe ser un número flotante positivo.")
@@ -76,6 +76,10 @@ if __name__ == "__main__":
     print("Titular:", cuenta.titular)
     print("Saldo:", cuenta.saldo)
     print("Divisa:", cuenta.divisa)
+    
+    # Modificar saldo
+    cuenta.saldo = 2000000
+    cuenta.mostrar_detalles_cuenta()
 
     # Realizar un deposito
     resultado, mensaje = cuenta.depositar(25000)
@@ -86,3 +90,5 @@ if __name__ == "__main__":
     resultado, mensaje = cuenta.retiro(5000)
     print(mensaje)
     print("Saldo final:", cuenta.saldo)
+    
+    
