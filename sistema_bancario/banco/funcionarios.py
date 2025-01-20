@@ -45,7 +45,8 @@ class Trabajadores:
 
     def sueldo_total(self):
         bono = {1: 1.0, 2: 1.05, 3: 1.1, 4: 1.15, 5: 1.20}
-        sueldo_total = self.sueldo_base * bono.get(self.rendimiento, 1)
+        bono_porcentaje = bono.get(self.rendimiento, 1)
+        sueldo_total = self.sueldo_base * bono_porcentaje
         return sueldo_total
 
     def mostrar_detalles_empleado(self):
