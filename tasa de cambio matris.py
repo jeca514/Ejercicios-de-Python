@@ -1,6 +1,3 @@
-def convertir_divisa(monto, tasa_cambio):
-    return monto * tasa_cambio
-
 def main():
     """
     Función principal que ejecuta el programa de conversión de divisas.
@@ -55,7 +52,7 @@ def main():
             d_salida = int(input()) - 1  # Convertir a índice 0-based
             
             # Calcular conversión
-            monto_convertido = convertir_divisa(monto, tasa_cambio[d_origen][d_salida])
+            monto_convertido = monto*tasa_cambio[d_origen][d_salida]
             
             # Mostrar resultado
             print(f"Sus {monto} {divisas[d_origen]} son {monto_convertido} {divisas[d_salida]}")
