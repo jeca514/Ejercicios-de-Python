@@ -35,7 +35,7 @@ class Paciente:
     @property
     def diagnostico(self):
         return self._diagnostico
-    
+
     @diagnostico.setter
     def diagnostico(self, valor):
         self._diagnostico = valor
@@ -59,10 +59,10 @@ class Paciente:
     def identifica_anemia(self):
         if self.hemoglobina <= self.rangos_hemoglobina[self.edad]["min"]:
             self.diagnostico = "tiene Anemia"
-             
+
         else:
             self.diagnostico = "No tiene Anemia"
-        return self.diagnostico 
+        return self.diagnostico
 
 
 if __name__ == "__main__":
