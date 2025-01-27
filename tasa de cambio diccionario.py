@@ -14,34 +14,30 @@ def main():
     La función continuará solicitando al usuario hasta que elija salir.
     """
     # Diccionario de divisas
-    divisas = {
-        1: "Pesos Colombianos",
-        2: "Dólares",
-        3: "Euros"
-    }
-    
+    divisas = {1: "Pesos Colombianos", 2: "Dólares", 3: "Euros"}
+
     # Diccionario de tasas de cambio
     tasa_cambio = {
-        (1, 1): 1,          # 1 COP a COP
-        (1, 2): 0.00026,    # 1 COP a USD
-        (1, 3): 0.00023,    # 1 COP a EUR
-        (2, 1): 3800,       # 1 USD a COP
-        (2, 2): 1,          # 1 USD a USD
-        (2, 3): 0.88,       # 1 USD a EUR
-        (3, 1): 4300,       # 1 EUR a COP
-        (3, 2): 1.14,       # 1 EUR a USD
-        (3, 3): 1           # 1 EUR a EUR
+        (1, 1): 1,  # 1 COP a COP
+        (1, 2): 0.00026,  # 1 COP a USD
+        (1, 3): 0.00023,  # 1 COP a EUR
+        (2, 1): 3800,  # 1 USD a COP
+        (2, 2): 1,  # 1 USD a USD
+        (2, 3): 0.88,  # 1 USD a EUR
+        (3, 1): 4300,  # 1 EUR a COP
+        (3, 2): 1.14,  # 1 EUR a USD
+        (3, 3): 1,  # 1 EUR a EUR
     }
-    
+
     while True:
         # Mostrar menú
         print("Menú de Convertir Divisas")
         print("   1. Convertir Divisas")
         print("   2. Salir")
-        
+
         # Ingresar una opción
         op = int(input("Elija una opción (1-2): "))
-        
+
         if op == 1:
             # Elegir divisas
             print("¿Qué divisa tiene?")
@@ -49,7 +45,7 @@ def main():
             print("   2. Dólares")
             print("   3. Euros")
             d_origen = int(input())  # La opción es 1-based
-            
+
             # Elegir Monto
             monto = float(input("¿Cuánto dinero tiene? "))
 
@@ -59,21 +55,24 @@ def main():
             print("   2. Dólares")
             print("   3. Euros")
             d_salida = int(input())  # La opción es 1-based
-            
+
             # Calcular conversión
-            monto_convertido = monto*tasa_cambio[(d_origen, d_salida)]
-            
+            monto_convertido = monto * tasa_cambio[(d_origen, d_salida)]
+
             # Mostrar resultado
-            print(f"Sus {monto} {divisas[d_origen]} son {monto_convertido} {divisas[d_salida]}")
-        
+            print(
+                f"Sus {monto} {divisas[d_origen]} son {monto_convertido} {divisas[d_salida]}"
+            )
+
         elif op == 2:
             print("Gracias, vuelva pronto")
             break
-        
+
         else:
             print("Opción no válida")
-        
+
         input("Presione enter para continuar")
+
 
 if __name__ == "__main__":
     main()
