@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 
-
 class Pokemon(ABC):
     def __init__(self, nombre, tipo, vida):
         self.nombre = nombre
