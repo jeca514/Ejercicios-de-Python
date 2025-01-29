@@ -16,31 +16,31 @@ class Pokemon(ABC):
 class Fuego(Pokemon):
     def atacar(self, contrincante):
         efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
-        danio = 10 * efectividad
-        contrincante.vida -= danio
+        daño = 10 * efectividad
+        contrincante.vida -= daño
         return (
             contrincante.vida,
-            f"{self.nombre} atacó a {contrincante.nombre} con lanza llamas y le quitó {danio} de vida",
+            f"{self.nombre} atacó a {contrincante.nombre} con lanza llamas y le quitó {daño} de vida",
         )
 
 class Agua(Pokemon):
     def atacar(self, contrincante):
         efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
-        danio = 10 * efectividad
-        contrincante.vida -= danio
+        daño = 10 * efectividad
+        contrincante.vida -= daño
         return (
             contrincante.vida,
-            f"{self.nombre} atacó a {contrincante.nombre} con hidrobomba y le quitó {danio} de vida",
+            f"{self.nombre} atacó a {contrincante.nombre} con hidrobomba y le quitó {daño} de vida",
         )
 
 class Planta(Pokemon):
     def atacar(self, contrincante):
         efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
-        danio = 10 * efectividad
-        contrincante.vida -= danio
+        daño = 10 * efectividad
+        contrincante.vida -= daño
         return (
             contrincante.vida,
-            f"{self.nombre} atacó a {contrincante.nombre} con hoja afilada y le quitó {danio} de vida",
+            f"{self.nombre} atacó a {contrincante.nombre} con hoja afilada y le quitó {daño} de vida",
         )
 
 class Efectividad:
