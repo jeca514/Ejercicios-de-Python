@@ -15,7 +15,7 @@ class Pokemon(ABC):
 
 class Fuego(Pokemon):
     def atacar(self, contrincante):
-        efectividad = self.calcular_efectividad(contrincante)
+        efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
         danio = 10 * efectividad
         contrincante.vida -= danio
         return (
@@ -25,7 +25,7 @@ class Fuego(Pokemon):
 
 class Agua(Pokemon):
     def atacar(self, contrincante):
-        efectividad = self.calcular_efectividad(contrincante)
+        efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
         danio = 10 * efectividad
         contrincante.vida -= danio
         return (
@@ -35,7 +35,7 @@ class Agua(Pokemon):
 
 class Planta(Pokemon):
     def atacar(self, contrincante):
-        efectividad = self.calcular_efectividad(contrincante)
+        efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
         danio = 10 * efectividad
         contrincante.vida -= danio
         return (
@@ -52,7 +52,7 @@ class Efectividad:
 
     @staticmethod 
     def calcular_efectividad(atacante, contrincante):
-        return Efectividad.tabla_de_tipos[atacante.tipo].get(contrincante.tipo, 1)
+        return Efectividad.tabla_de_tipos.get(atacante, {}).get(contrincante, 1)
 
 if __name__ == "__main__":
     equipo = [
