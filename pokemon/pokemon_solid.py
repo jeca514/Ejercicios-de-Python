@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Pokemon(ABC):
     def __init__(self, nombre, tipo, vida):
         self.nombre = nombre
@@ -13,6 +14,7 @@ class Pokemon(ABC):
     def info(self):
         return f"====================\nNombre: {self.nombre}\nTipo: {self.tipo}\nVida: {self.vida}\n===================="
 
+
 class Fuego(Pokemon):
     def atacar(self, contrincante):
         efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
@@ -22,6 +24,7 @@ class Fuego(Pokemon):
             contrincante.vida,
             f"{self.nombre} atacó a {contrincante.nombre} con lanza llamas y le quitó {daño} de vida",
         )
+
 
 class Agua(Pokemon):
     def atacar(self, contrincante):
@@ -33,6 +36,7 @@ class Agua(Pokemon):
             f"{self.nombre} atacó a {contrincante.nombre} con hidrobomba y le quitó {daño} de vida",
         )
 
+
 class Planta(Pokemon):
     def atacar(self, contrincante):
         efectividad = Efectividad.calcular_efectividad(self.tipo, contrincante.tipo)
@@ -43,6 +47,7 @@ class Planta(Pokemon):
             f"{self.nombre} atacó a {contrincante.nombre} con hoja afilada y le quitó {daño} de vida",
         )
 
+
 class Efectividad:
     tabla_de_tipos = {
         "agua": {"fuego": 0.5, "agua": 0.5, "planta": 2},
@@ -50,9 +55,10 @@ class Efectividad:
         "planta": {"fuego": 2, "agua": 0.5, "planta": 0.5},
     }
 
-    @staticmethod 
+    @staticmethod
     def calcular_efectividad(atacante, contrincante):
         return Efectividad.tabla_de_tipos.get(atacante, {}).get(contrincante, 1)
+
 
 if __name__ == "__main__":
     equipo = [
@@ -69,3 +75,4 @@ if __name__ == "__main__":
         print(equipo[i].atacar(equipo[(i + 2) % len(equipo)]))
         print(equipo[i].atacar(equipo[(i + 3) % len(equipo)]))
         print("")
+
