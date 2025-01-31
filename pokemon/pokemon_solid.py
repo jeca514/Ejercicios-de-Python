@@ -76,3 +76,4 @@ if __name__ == "__main__":
         print(equipo[i].atacar(equipo[(i + 3) % len(equipo)]))
         print("")
 
+q- 
