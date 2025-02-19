@@ -62,5 +62,5 @@ def opciones_de_pago():
 if __name__ == "__main__":
     metodo = opciones_de_pago()
     print(metodo)
-    pago = PaymentMethodFactory.crear(TipoPago.PAYPAL)
+    pago = PaymentMethodFactory.crear(metodo)
     pago.procesar_pago(100.50)  # Output: "Pagando en efectivo"
